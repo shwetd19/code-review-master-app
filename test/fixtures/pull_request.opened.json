@@ -2,11 +2,9 @@
   "action": "opened",
   "pull_request": {
     "number": 1,
-    "title": "Add a new feature",
     "user": {
       "login": "hiimbex"
-    },
-    "html_url": "https://github.com/hiimbex/testing-things/pull/1"
+    }
   },
   "repository": {
     "name": "testing-things",

@@ -82,9 +82,8 @@
 // // For more information about testing with Nock see:
 // // https://github.com/nock/nock
 
-
 import nock from "nock";
-import myProbotApp from "../src/index.js";
+import myProbotApp from "../src/index";
 import { Probot, ProbotOctokit } from "probot";
 import fs from "fs";
 import path from "path";
@@ -92,21 +91,26 @@ import { fileURLToPath } from "url";
 import { describe, beforeEach, afterEach, test, expect } from "vitest";
 
 const issueCreatedBody = { body: "Thanks for opening this issue!" };
-const pullRequestCommentBody = { body: "Thanks for making this pull request! We will review it shortly." };
+const pullRequestCommentBody = {
+  body: "Thanks for making this pull request! We will review it shortly.",
+};
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const privateKey = fs.readFileSync(
   path.join(__dirname, "fixtures/mock-cert.pem"),
-  "utf-8",
+  "utf-8"
 );
 
 const issueOpenedPayload = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "fixtures/issues.opened.json"), "utf-8"),
+  fs.readFileSync(path.join(__dirname, "fixtures/issues.opened.json"), "utf-8")
 );
 
 const pullRequestOpenedPayload = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "fixtures/pull_request.opened.json"), "utf-8"),
+  fs.readFileSync(
+    path.join(__dirname, "fixtures/pull_request.opened.json"),
+    "utf-8"
+  )
 );
 
 describe("My Probot app", () => {
@@ -170,7 +174,10 @@ describe("My Probot app", () => {
       .reply(200);
 
     // Receive a webhook event for pull request opened
-    await probot.receive({ name: "pull_request", payload: pullRequestOpenedPayload });
+    await probot.receive({
+      name: "pull_request",
+      payload: pullRequestOpenedPayload,
+    });
 
     expect(mock.pendingMocks()).toStrictEqual([]);
   });
