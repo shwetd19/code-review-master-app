@@ -22,7 +22,7 @@ default_events:
   # - deployment_status
   # - fork
   # - gollum
-  # - issue_comment
+  - issue_comment
   - issues
 # - label
 # - milestone
@@ -62,7 +62,7 @@ default_permissions:
 
   # Repository contents, commits, branches, downloads, releases, and merges.
   # https://developer.github.com/v3/apps/permissions/#permission-on-contents
-  # contents: read
+  contents: read
 
   # Deployments and deployment statuses.
   # https://developer.github.com/v3/apps/permissions/#permission-on-deployments
@@ -94,39 +94,39 @@ default_permissions:
 
   # Manage repository projects, columns, and cards.
   # https://developer.github.com/v3/apps/permissions/#permission-on-repository-projects
-  # repository_projects: read
+  repository_projects: read
 
   # Retrieve security vulnerability alerts.
   # https://developer.github.com/v4/object/repositoryvulnerabilityalert/
-  # vulnerability_alerts: read
+  vulnerability_alerts: read
 
   # Commit statuses.
   # https://developer.github.com/v3/apps/permissions/#permission-on-statuses
-  # statuses: read
+  statuses: read
 
   # Organization members and teams.
   # https://developer.github.com/v3/apps/permissions/#permission-on-members
-  # members: read
+  members: read
 
   # View and manage users blocked by the organization.
   # https://developer.github.com/v3/apps/permissions/#permission-on-organization-user-blocking
-  # organization_user_blocking: read
+  organization_user_blocking: read
 
   # Manage organization projects, columns, and cards.
   # https://developer.github.com/v3/apps/permissions/#permission-on-organization-projects
-  # organization_projects: read
+  organization_projects: read
 
   # Manage team discussions and related comments.
   # https://developer.github.com/v3/apps/permissions/#permission-on-team-discussions
-  # team_discussions: read
+  team_discussions: read
 
   # Manage the post-receive hooks for an organization.
   # https://developer.github.com/v3/apps/permissions/#permission-on-organization-hooks
-  # organization_hooks: read
+  organization_hooks: read
 
   # Get notified of, and update, content references.
   # https://developer.github.com/v3/apps/permissions/
-  # organization_administration: read
+  organization_administration: read
 # The name of the GitHub App. Defaults to the name specified in package.json
 # name: My Probot App
 
